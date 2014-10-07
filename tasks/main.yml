@@ -1,0 +1,31 @@
+---
+- name: Install zsh (with dependencies)
+  apt: >
+    name={{ item }} 
+    state=present 
+    update_cache=yes
+  with_items:
+    - git
+    - curl
+    - zsh
+  sudo: yes
+
+- name: Install oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+  sudo: no
+
+- name: Copy my .zshrc
+  command: curl -LSso ~/.zshrc https://raw.github.com/ChengLong/configs/master/.zshrc 
+  sudo: no
+
+- name: Copy my .zsh_aliases 
+  command: curl -LSso ~/.zsh_aliases https://raw.github.com/ChengLong/configs/master/.zsh_aliases 
+  sudo: no
+
+- name: Copy my pygmalion.zsh-theme 
+  command: curl -LSso ~/.oh-my-zsh/themes/pygmalion.zsh-theme https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
+  sudo: no
+
+- name: Switch to zsh 
+  user: name={{ansible_ssh_user}} shell=/usr/bin/zsh
+  sudo: yes 
