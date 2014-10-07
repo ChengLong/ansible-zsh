@@ -13,17 +13,16 @@
 
 - name: Install oh-my-zsh
   shell: curl -L http://install.ohmyz.sh | sh 
-  remote_user: {{ansible_ssh_user}}
+  remote_user: "{{ansible_ssh_user}}"
 
 - name: Copy my .zshrc
   command: curl -LSso ~/.zshrc https://raw.github.com/ChengLong/configs/master/.zshrc 
-  remote_user: {{ansible_ssh_user}}
+  remote_user: "{{ansible_ssh_user}}"
 
 - name: Copy my .zsh_aliases 
   command: curl -LSso ~/.zsh_aliases https://raw.github.com/ChengLong/configs/master/.zsh_aliases 
-  remote_user: {{ansible_ssh_user}}
+  remote_user: "{{ansible_ssh_user}}"
 
 - name: Copy my pygmalion.zsh-theme 
   command: curl -LSso ~/.oh-my-zsh/themes/pygmalion.zsh-theme https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
-  remote_user: {{ansible_ssh_user}}
-
+  remote_user: "{{ansible_ssh_user}}"
