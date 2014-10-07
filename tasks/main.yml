@@ -9,9 +9,10 @@
     - curl
     - zsh
   sudo: yes
+  remote_user: root
 
 - name: Install oh-my-zsh
-  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+  command: curl -L http://install.ohmyz.sh | sh 
   sudo: no
 
 - name: Copy my .zshrc
@@ -25,6 +26,3 @@
 - name: Copy my pygmalion.zsh-theme 
   command: curl -LSso ~/.oh-my-zsh/themes/pygmalion.zsh-theme https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
   sudo: no
-
-- name: Switch to zsh 
-  user: name={{ansible_ssh_user}} shell=/usr/bin/zsh
