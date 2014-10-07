@@ -27,5 +27,5 @@
   sudo: no
 
 - name: Switch to zsh 
-  user: name={{ansible_ssh_user}} shell=/usr/bin/zsh
+  command: chsh -s '/usr/bin/zsh'
   sudo: yes 
