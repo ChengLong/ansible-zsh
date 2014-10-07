@@ -12,7 +12,7 @@
   remote_user: root
 
 - name: Install oh-my-zsh
-  command: curl -L http://install.ohmyz.sh | sh 
+  shell: curl -L http://install.ohmyz.sh | sh 
   sudo: no
 
 - name: Copy my .zshrc
