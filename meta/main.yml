@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Cheng Long 
-  description: Install zsh, oh-my-zsh and many useful aliases 
+  description: Install zsh, oh-my-zsh, sensible default .zshrc and .zsh_aliases. 
   license: MIT 
   min_ansible_version: 1.7
   platforms:
