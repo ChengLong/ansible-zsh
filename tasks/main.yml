@@ -11,8 +11,8 @@
   sudo: yes
 
 - name: Install oh-my-zsh
-  shell: curl -L http://install.ohmyz.sh | sh 
-  sudo: no
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+  sudo: no 
 
 - name: Copy my .zshrc
   command: curl -LSso ~/.zshrc https://raw.github.com/ChengLong/configs/master/.zshrc 
@@ -25,3 +25,7 @@
 - name: Copy my pygmalion.zsh-theme 
   command: curl -LSso ~/.oh-my-zsh/themes/pygmalion.zsh-theme https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
   sudo: no
+
+- name: Switch to zsh
+  user: name={{ansible_ssh_user}} shell=/usr/bin/zsh
+  sudo: yes 
