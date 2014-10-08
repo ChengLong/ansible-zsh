@@ -2,6 +2,7 @@ Ansible Role for ZSH
 =========
 
 This role:
+
 - installs zsh
 - installs oh-my-zsh at ~{{ansible_ssh_user}}/.oh-my-zsh
 - backs up existing ~/.zshrc
@@ -11,18 +12,16 @@ This role:
 - copies [my pygmalion.zsh-theme](https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme) to ~{{ansible_ssh_user}}/.oh-my-zsh/themes/pygmalion.zsh-theme
 - changes the shell of {{ansible_ssh_user}} to zsh
 
-Please note that the task 'Install zsh' requires sudo. Please make that the user that your control machine ssh into has sudo access. 
+Requirements
+------------
+
+Please note that the task 'Install zsh' requires sudo. Please make that the user that your control machine ssh into has *sudo access*. 
 I recommend using `ansible_ssh_user` and `ansible_sudo_pass` in your inventory. E.g. 
 
 ```
 [test]
 xxx.xxx.xxx.xxx ansible_ssh_user=exampleuser ansible_sudo_pass='password of exampleuser'
 ```
-
-Requirements
-------------
-
-NONE
 
 Role Variables
 --------------
