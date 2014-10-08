@@ -9,7 +9,6 @@
     - curl
     - zsh
   sudo: yes
-  remote_user: root
 
 - name: Install oh-my-zsh
   shell: curl -L http://install.ohmyz.sh | sh 
