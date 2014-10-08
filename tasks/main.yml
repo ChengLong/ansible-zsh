@@ -15,11 +15,11 @@
   sudo: no 
 
 - name: Back up existing ~/.zshrc
-  command: if [ -f ~{{ansible_ssh_user}}/.zshrc ]; then mv ~{{ansible_ssh_user}}/.zshrc{,.orig}; fi
+  command: if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.orig}; fi
   sudo: no 
 
 - name: Back up existing ~/.zsh_aliases
-  command: if [ -f ~{{ansible_ssh_user}}/.zsh_aliases ]; then mv ~{{ansible_ssh_user}}/.zsh_aliases{,.orig}; fi
+  command: if [ -f ~/.zsh_aliases ]; then mv ~/.zsh_aliases{,.orig}; fi
   sudo: no 
 
 - name: Copy my .zshrc
