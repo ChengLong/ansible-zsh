@@ -15,11 +15,11 @@
   sudo: no 
 
 - name: Back up existing ~/.zshrc
-  command: if [ -f ~/.zshrc ]; then mv ~/.zshrc ~/.zshrc.bak; fi
+  shell: if [ -f ~/.zshrc ]; then mv ~/.zshrc ~/.zshrc.bak ; fi
   sudo: no 
 
 - name: Back up existing ~/.zsh_aliases
-  command: if [ -f ~/.zsh_aliases ]; then mv ~/.zsh_aliases ~/.zsh_aliases.bak; fi
+  shell: if [ -f ~/.zsh_aliases ]; then mv ~/.zsh_aliases ~/.zsh_aliases.bak ; fi
   sudo: no 
 
 - name: Copy my .zshrc
