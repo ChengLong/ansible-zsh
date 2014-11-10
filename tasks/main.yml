@@ -1,6 +1,6 @@
 ---
 - name: Install zsh (with dependencies)
-  apt: >
+  apt: 
     name={{ item }} 
     state=present 
     update_cache=yes

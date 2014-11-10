@@ -16,12 +16,15 @@ Requirements
 ------------
 
 Please note that the task 'Install zsh' requires sudo. Please make that the user that your control machine ssh into has *sudo access*. 
-I recommend using `ansible_ssh_user` and `ansible_sudo_pass` in your inventory. E.g. 
 
 ```
 [test]
-xxx.xxx.xxx.xxx ansible_ssh_user=exampleuser ansible_sudo_pass='password of exampleuser'
+xxx.xxx.xxx.xxx ansible_ssh_user=exampleuser 
 ```
+
+You can use `--ask-sudo-pass` when running your playbook
+
+`ansible-playbook playbook.yml -i inventory.ini --ask-sudo-pass`
 
 Role Variables
 --------------
@@ -34,7 +37,7 @@ Example Playbook
 ```
 - hosts: servers
   roles:
-    - { role: ChengLong.zsh }
+    - role: ChengLong.zsh
 ```
 
 License
