@@ -12,12 +12,13 @@ This role:
 - copies [my pygmalion.zsh-theme](https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme) to ~{{ansible_ssh_user}}/.oh-my-zsh/themes/pygmalion.zsh-theme
 - changes the shell of {{ansible_ssh_user}} to zsh
 
-This role works for both OSX and Derbian based OS.
+This role works for both OSX and Debian based OS.
 
 Requirements
 ------------
 
-Please note that the task 'Install zsh' requires sudo. Please make that the user that your control machine ssh into has *sudo access*. 
+Note that this role requires sudo to `Install zsh` and change shell to `zsh`.
+Please make sure that the user that your control machine ssh into has *sudo access*. I recommend using `ansible_ssh_user` in your inventory file, e.g. 
 
 ```
 [test]
@@ -27,6 +28,8 @@ xxx.xxx.xxx.xxx ansible_ssh_user=exampleuser
 You can use `--ask-sudo-pass` when running your playbook
 
 `ansible-playbook playbook.yml -i inventory.ini --ask-sudo-pass`
+
+If you are provisioning OSX, you need to have `homebrew`.
 
 Role Variables
 --------------
