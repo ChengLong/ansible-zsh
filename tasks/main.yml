@@ -14,7 +14,6 @@
     state=present
     update_homebrew=yes
   with_items: dependencies
-  sudo: yes
   when: ansible_os_family == "Darwin"
 
 - name: Install oh-my-zsh
