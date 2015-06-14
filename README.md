@@ -12,6 +12,8 @@ This role:
 - copies [my pygmalion.zsh-theme](https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme) to ~{{ansible_ssh_user}}/.oh-my-zsh/themes/pygmalion.zsh-theme
 - changes the shell of {{ansible_ssh_user}} to zsh
 
+This role works for both OSX and Derbian based OS.
+
 Requirements
 ------------
 
