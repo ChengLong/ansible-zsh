@@ -11,6 +11,9 @@ galaxy_info:
     - name: Ubuntu 
       versions:
         - all
+    - name: OSX
+      versions:
+        - all
   categories:
     - system
 dependencies: []

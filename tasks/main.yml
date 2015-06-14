@@ -1,14 +1,21 @@
 ---
 - name: Install zsh (with dependencies)
-  apt: 
-    name={{ item }} 
-    state=present 
+  apt:
+    name={{ item }}
+    state=present
     update_cache=yes
-  with_items:
-    - git
-    - curl
-    - zsh
+  with_items: dependencies
   sudo: yes
+  when: ansible_os_family == "Debian"
+
+- name: Install zsh (with dependencies)
+  homebrew:
+    name={{ item }}
+    state=present
+    update_homebrew=yes
+  with_items: dependencies
+  sudo: yes
+  when: ansible_os_family == "Darwin"
 
 - name: Install oh-my-zsh
   git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
@@ -34,6 +41,10 @@
   command: curl -LSso ~/.oh-my-zsh/themes/pygmalion.zsh-theme https://raw.github.com/ChengLong/configs/master/pygmalion.zsh-theme
   sudo: no
 
+- name: Get zsh path
+  command: which zsh 
+  register: zsh_path
+
 - name: Switch to zsh
-  user: name={{ansible_ssh_user}} shell=/usr/bin/zsh
+  user: name={{ansible_ssh_user}} shell={{ zsh_path.stdout }}
   sudo: yes 

@@ -1,2 +1,5 @@
 ---
-# vars file for zsh
+dependencies:
+  - git
+  - curl
+  - zsh
