@@ -17,7 +17,7 @@
   when: ansible_os_family == "Darwin"
 
 - name: Install oh-my-zsh
-  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh force=yes
   sudo: no 
 
 - name: Back up existing ~/.zshrc
